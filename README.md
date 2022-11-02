@@ -1,1 +1,1 @@
-# coursSQLAlchedmy
+# coursSQLAlchemy
