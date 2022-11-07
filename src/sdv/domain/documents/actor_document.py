@@ -4,9 +4,9 @@ from datetime import datetime
 from typing import Dict
 
 
-@dataclasses
+@dataclasses.dataclass
 class ActorDocument:
-    id:int
+    id: int
     first_name: str
     last_name: str
     last_update: datetime
@@ -16,10 +16,10 @@ class ActorDocument:
             "_index": index_name,
             "_id": es_id,
             "_op_type": "index",
-            "_source":{
+            "_source": {
                 "id": self.id,
                 "first_name": self.first_name,
                 "last_name": self.last_name,
-                "last_update": self.last_update
-            }
+                "last_update": self.last_update,
+            },
         }

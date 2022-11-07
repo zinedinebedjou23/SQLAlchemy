@@ -13,5 +13,5 @@ class ResourcesRepository(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def find_by_id(self, ids:List[int]) -> List[AbstractActorEntity]:
+    def find_by_ids(self, ids: List[int]) -> List[AbstractActorEntity]:
         raise NotImplementedError

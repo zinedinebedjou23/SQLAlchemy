@@ -1,7 +1,8 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from sdv.domain.documents.actor_document import ActorDocument
+
+from sdv.domain.documents.actor_es_document import ActorEsDocument
 from sdv.domain.entities.abstract_actor_entity import AbstractActorEntity
 
 
@@ -12,7 +13,10 @@ class Actor(AbstractActorEntity):
     last_name: str
     last_update: datetime
 
-    def to_document(self) -> ActorDocument:
-        return ActorDocument(id=self.id, first_name=self.first_name,
-                             last_name=self.last_name,
-                             last_update=self.last_update)
+    def to_document(self) -> ActorEsDocument:
+        return ActorEsDocument(
+            id=self.id,
+            first_name=self.first_name,
+            last_name=self.last_name,
+            last_update=self.last_update
+        )

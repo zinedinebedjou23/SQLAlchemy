@@ -1,4 +1,4 @@
-version: "3.1"
+version: "3.0"
 services:
   elasticsearch:
     container_name: es-container
@@ -9,8 +9,7 @@ services:
     networks:
       - es-net
     ports:
-      - 9200:9200
-  kibana:
+      - 9200:9200  kibana:
     container_name: kb-container
     image: docker.elastic.co/kibana/kibana:7.11.0
     environment:
@@ -20,7 +19,6 @@ services:
     depends_on:
       - elasticsearch
     ports:
-      - 5601:5601
-networks:
+      - 5601:5601networks:
   es-net:
     driver: bridge
